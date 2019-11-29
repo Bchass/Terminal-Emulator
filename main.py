@@ -9,7 +9,7 @@ class Terminal(QtWidgets.QMainWindow):
     def __init__(self):
         super(Terminal, self).__init__()
         uic.loadUi('gui.ui', self)
-        self.lineEdit.returnPressed.connect(self.Drake)
+        self.lineEdit.returnPressed.connect(self.commands)
         self.working_directory = "."
 
     def commands(self):
