@@ -12,7 +12,6 @@ class Terminal(QtWidgets.QMainWindow):
         self.lineEdit.returnPressed.connect(self.Drake)
         self.working_directory = "."
 
-# Drake is just a placeholder for now, till I figure out a better name
     def commands(self):
         commands = self.lineEdit.text()
         
@@ -26,7 +25,7 @@ class Terminal(QtWidgets.QMainWindow):
         print(self.working_directory)
 
         subprocess.call(commands, shell=True, cwd=self.working_directory)
-        
+
        
 
 
