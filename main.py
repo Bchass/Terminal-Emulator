@@ -23,6 +23,7 @@ class Terminal(QtWidgets.QMainWindow):
                 self.working_directory = self.working_directory + "/" + values[1]
         
         print(self.working_directory)
+        os.system('clear')
 
         subprocess.call(commands, shell=True, cwd=self.working_directory)
 
