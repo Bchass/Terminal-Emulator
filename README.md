@@ -18,7 +18,8 @@ Just a side project to create a basic Terminal emulator and to explore more with
 - help
 
 #### Need to fix:
-- Display output in GUI
+~~-Display input in gui~~
+- Display output in gui
 - exit
 - cd
 - cd ..
