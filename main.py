@@ -23,12 +23,13 @@ class Terminal(QtWidgets.QMainWindow):
                 self.working_directory = self.working_directory + "/" + values[1]
         
         print(self.working_directory)
-        os.system('clear')
 
         subprocess.call(commands, shell=True, cwd=self.working_directory)
 
-        self.textBrowser.setText(self.textBrowser.toPlainText() + "\n$" + commands) #show input in GUI
+        self.textBrowser.setText(self.textBrowser.toPlainText() + "\n➜" + commands) #show input in GUI
 
+        output = subprocess.check_output(commands, shell=True, cwd=self.working_directory) #show output in GUI
+        self.textBrowser.setText(self.textBrowser.toPlainText() + "\n" + output.decode('UTF-8'))
        
 
 
