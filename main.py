@@ -27,6 +27,8 @@ class Terminal(QtWidgets.QMainWindow):
 
         subprocess.call(commands, shell=True, cwd=self.working_directory)
 
+        self.textBrowser.setText(self.textBrowser.toPlainText() + "\n$" + commands) #show input in GUI
+
        
 
 
