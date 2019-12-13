@@ -20,6 +20,7 @@ Just a side project to create a basic Terminal emulator and to explore more with
 ~~-Display input in gui~~
 
 ~~- Display output in gui~~
+
 ~~- clear (clear in gui)~~
 - exit
 
