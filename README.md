@@ -23,7 +23,7 @@ Just a side project to create a basic Terminal emulator and to explore more with
 - clear (clear in gui)
 - exit
 
-*Note: Just basic commands tested at the moment*
+*Note: Just basic commands tested at the moment, limintations on what commands can be executed*
 
 -----------------------------------------------------------
 ## Development
