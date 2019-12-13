@@ -2,7 +2,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMessageBox, QDialog, QFileDialog
 import sys
 import os
-import subprocess
+import subprocess as sp
  
 class Terminal(QtWidgets.QMainWindow):
 
@@ -12,25 +12,27 @@ class Terminal(QtWidgets.QMainWindow):
         self.lineEdit.returnPressed.connect(self.commands)
         self.working_directory = "."
 
+
     def commands(self):
         commands = self.lineEdit.text()
-        
+        os.system('clear') #clear in shell
+
         if "cd" in commands:
             values = commands.split(" ")
-            if values[1][0] == "/":
+            if values[1] == "/":
                 self.working_directory = values[1]
             else:
                 self.working_directory = self.working_directory + "/" + values[1]
-        
+
+    
         print(self.working_directory)
 
-        subprocess.call(commands, shell=True, cwd=self.working_directory)
+        sp.call(commands,shell=True, cwd=self.working_directory)
 
         self.textBrowser.setText(self.textBrowser.toPlainText() + "\n➜" + commands) #show input in GUI
 
-        output = subprocess.check_output(commands, shell=True, cwd=self.working_directory) #show output in GUI
+        output = sp.check_output(commands,shell=True, cwd=self.working_directory) #show output in GUI
         self.textBrowser.setText(self.textBrowser.toPlainText() + "\n" + output.decode('UTF-8'))
-       
 
 
 app = QtWidgets.QApplication([])
