@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QMessageBox, QDialog, QFileDialog
 import sys
 import os
 import subprocess as sp
+from subprocess import CalledProcessError
 
 class Terminal(QtWidgets.QMainWindow):
 
@@ -27,18 +28,13 @@ class Terminal(QtWidgets.QMainWindow):
 
         sp.call(commands,shell=True, cwd=self.working_directory)
 
-        self.textBrowser.setText(self.textBrowser.toPlainText() + "\n➜" + commands) #show input in GUI
-
-    def error(self):
+        self.textBrowser.setText(self.textBrowser.toPlainText() + "\n➜  " + commands) #show input in GUI
+        
         try:
             output = sp.check_output(commands,shell=True, cwd=self.working_directory) #show output in GUI
             self.textBrowser.setText(self.textBrowser.toPlainText() + "\n" + output.decode('UTF-8'))
-        except Exception:
-            output = str(output)
-        finished = output.split('\n')
-        for line in finished:
-            print(line)
-        return
+        except CalledProcessError as e:
+            pass
 
 app = QtWidgets.QApplication([])
 gui = Terminal()
