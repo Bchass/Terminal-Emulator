@@ -22,8 +22,6 @@ Just a side project to create a basic Terminal emulator and to explore more with
 ~~- Display output in gui~~
 - clear (clear in gui)
 - exit
-- cd
-- cd ..
 
 *Note: Just basic commands tested at the moment*
 
