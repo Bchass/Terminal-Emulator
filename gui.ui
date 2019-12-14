@@ -54,7 +54,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/newPrefix/falcon.jpg);</string>
+     <string notr="true"/>
     </property>
    </widget>
   </widget>
